@@ -40,5 +40,10 @@ al iniciar sesion en github creamos un repositorio, este repositorio permitira s
 		crear nuevo repositorio
 		push repository 
 	al tener un repositorio local git ya creado, se elige la segunda opcion
-	en la cual aparecen los comandos que se deben insertar uno por uno y 
+	en la cual aparecen los comandos que se deben insertar uno por uno
+	al insertar el ultimo comando se debe insertar el nombre de usuario y la password, en este caso la clave es un token que se genera en github
+para automatizar este proceso de copia y pega
+	genere un alias el cual lee un archivo .txt donde esta el token y lo copia 
+	al portapapeles, agilizando el push
+
 
