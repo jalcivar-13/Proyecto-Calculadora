@@ -4,5 +4,26 @@ git --version
 	git funciona de forma local
 		consultar la pagina e inspeccionar el flujo de trabajo
 	github es el que permite actualizar las versiones a la nube
+crear carpeta y archivos dentro de ella
+entrar a la carpeta
+
+registrar usuario:
+git config --global user.name "jalcivar-13"
+	crea el usuario para git 
+git config --global user.name
+	verifica la creacion del usuario 
+git config --global user.email "jalcivar2478@utm.edu.ec"
+	vincular correo de git, con el correo de github 
+	es recomendable esa práctica
+
+registrar versiones:
+git init 
+	permite iniciar el proyecto git en un directorio especifico
+	de iniciarlo y volver a intentar iniciarlo, se mostrará un mensaje de que
+	 ya esta iniciado
+git add .
+	el . sirve para mandar todos los archivos al repositorio
+git commit -m "Archivo .html plano para proyecto de calculadora"
+
 
 
