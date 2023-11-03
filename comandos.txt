@@ -24,6 +24,21 @@ git init
 git add .
 	el . sirve para mandar todos los archivos al repositorio
 git commit -m "Archivo .html plano para proyecto de calculadora"
+	crea el primer commit para actualizar el repositorio
+git log --oneline
+	lee todos los commit realizados
+
+despues de varias actualizaciones, o alguna actualizacion importante es necesarioun nuevo add
+git add .
+	al enviar la actualizacion es necesario de nuevo enviar un commit
+git commit -m "añadi el titulo de calculadora y cambie la pagina a español"
+			
+los cambios se actualizan de forma local, aun falta aprender a subir los cambios a github
+
+al iniciar sesion en github creamos un repositorio, este repositorio permitira subir ahi el repositorio local de git
+	al crearlo aparecen dos opciones, las cuales son :
+		crear nuevo repositorio
+		push repository 
 
 
 
