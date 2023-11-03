@@ -39,6 +39,6 @@ al iniciar sesion en github creamos un repositorio, este repositorio permitira s
 	al crearlo aparecen dos opciones, las cuales son :
 		crear nuevo repositorio
 		push repository 
-
-
+	al tener un repositorio local git ya creado, se elige la segunda opcion
+	en la cual aparecen los comandos que se deben insertar uno por uno y 
 
