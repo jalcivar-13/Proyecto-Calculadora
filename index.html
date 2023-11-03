@@ -3,9 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <title>Calculadora Web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e3ffe6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculadora {
+            background-color: beige;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff7354;
+            text-align: left;
+        }
+
+        .presentacion {
+            margin-bottom: 10px;
+ 	    text-align:left;
+	}
+
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        #pantalla {
+            width: calc(100% - 10px);
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .calculadora input[type="button"] {
+            width: 18%;
+            height: 40px;
+            cursor: pointer;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+            background-color: #fff;
+        }
+
+        .calculadora input[type="button"]:hover {
+            background-color: #f0f0f0;
+        }
+
+        .todo {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
+    <div class="todo">
+        <div class="presentacion">
+            <h1>Calculadora web creada por:</h1>
+            <ul>
+                <li>Alcivar Montesdeoca Jostyn Orlando</li>
+                <li>Briones Pino Carlos Alberto</li>
+            </ul>
+        </div>
+        <div class="calculadora">
+            <input type="text" id="pantalla" readonly>
+            <br>
+            <input type="button" value="7" onclick="aggPantalla('7')">
+            <input type="button" value="8" onclick="aggPantalla('8')">
+            <input type="button" value="9" onclick="aggPantalla('9')">
+            <input type="button" value="+" onclick="aggPantalla('+')">
+            <br>
+            <input type="button" value="4" onclick="aggPantalla('4')">
+            <input type="button" value="5" onclick="aggPantalla('5')">
+            <input type="button" value="6" onclick="aggPantalla('6')">
+            <input type="button" value="-" onclick="aggPantalla('-')">
+            <br>
+            <input type="button" value="1" onclick="aggPantalla('1')">
+            <input type="button" value="2" onclick="aggPantalla('2')">
+            <input type="button" value="3" onclick="aggPantalla('3')">
+            <input type="button" value="*" onclick="aggPantalla('*')">
+            <br>
+            <input type="button" value="C" onclick="limpiarPantalla()">
+            <input type="button" value="0" onclick="aggPantalla('0')">
+            <input type="button" value="=" onclick="calcular()">
+            <input type="button" value="/" onclick="aggPantalla('/')">
+        </div>
+    </div>
 
+    <script>
+        function aggPantalla(value) {
+            document.getElementById('pantalla').value += value;
+        }
+
+        function limpiarPantalla() {
+            document.getElementById('pantalla').value = '';
+        }
+
+        function calcular() {
+            const expression = document.getElementById('pantalla').value;
+            try {
+                const result = eval(expression);
+                document.getElementById('pantalla').value = result;
+            } catch (error) {
+                document.getElementById('pantalla').value = 'Error';
+            }
+        }
+    </script>
 </body>
 </html>
+
