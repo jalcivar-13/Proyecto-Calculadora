@@ -1,0 +1,8 @@
+sudo apt install git 
+git --version 
+	git es un controlador de versiones
+	git funciona de forma local
+		consultar la pagina e inspeccionar el flujo de trabajo
+	github es el que permite actualizar las versiones a la nube
+
+
