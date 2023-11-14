@@ -1,0 +1,3 @@
+Mediante este documento realizado el 13 de noviembre 2023 20:47
+Se realiza una clonación y un push de forma correcta
+
