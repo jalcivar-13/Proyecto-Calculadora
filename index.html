@@ -98,27 +98,38 @@
             <input type="button" value="0" onclick="aggPantalla('0')">
             <input type="button" value="=" onclick="calcular()">
             <input type="button" value="/" onclick="aggPantalla('/')">
+            <input type="button" value="%" onclick="aggPantalla('%')">
         </div>
     </div>
 
     <script>
         function aggPantalla(value) {
-            document.getElementById('pantalla').value += value;
+            const pantalla = document.getElementById('pantalla');
+            pantalla.value += value;
         }
 
         function limpiarPantalla() {
             document.getElementById('pantalla').value = '';
         }
-
         function calcular() {
             const expression = document.getElementById('pantalla').value;
-            try {
-                const result = eval(expression);
-                document.getElementById('pantalla').value = result;
-            } catch (error) {
-                document.getElementById('pantalla').value = 'Error';
+            if (expression.includes('%')) {
+                // Si la expresión contiene '%', se calcula el porcentaje.
+                const base = expression.split('%')[0];
+                const porcentaje = expression.split('%')[1];
+                const porcentajeCalculado = eval(base) * (eval(porcentaje) / 100);
+                document.getElementById('pantalla').value = porcentajeCalculado;
+            } else {
+                try {
+                    // Si no contiene '%', se realiza el cálculo normalmente.
+                    const result = eval(expression);
+                    document.getElementById('pantalla').value = result;
+                } catch (error) {
+                    document.getElementById('pantalla').value = 'Error';
+                }
             }
         }
+
     </script>
 </body>
 </html>
