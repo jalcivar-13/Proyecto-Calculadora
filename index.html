@@ -25,16 +25,21 @@
         h1 {
             color: #ff7354;
             text-align: left;
-        }
+        }   
 
+	h2 {
+            color: #ff7354;
+            text-align: center;
+        }
         .presentacion {
             margin-bottom: 10px;
- 	    text-align:left;
+ 	        text-align:center;
 	}
 
 
         ul li {
             margin: 5px 0;
+ 	        text-align:left;            
         }
 
         #pantalla {
@@ -70,6 +75,8 @@
 <body>
     <div class="todo">
         <div class="presentacion">
+            <h2> Ingeniería de Software - 5to Nivel</h2>
+            <h2> Desarrollo Web </h2>
             <h1>Calculadora web creada por:</h1>
             <ul>
                 <li>Alcivar Montesdeoca Jostyn Orlando</li>
@@ -96,9 +103,10 @@
             <br>
             <input type="button" value="C" onclick="limpiarPantalla()">
             <input type="button" value="0" onclick="aggPantalla('0')">
-            <input type="button" value="=" onclick="calcular()">
             <input type="button" value="/" onclick="aggPantalla('/')">
             <input type="button" value="%" onclick="aggPantalla('%')">
+            <br>
+            <input type="button" value="=" onclick="calcular()" style="width: 100%;">
         </div>
     </div>
 
@@ -111,25 +119,23 @@
         function limpiarPantalla() {
             document.getElementById('pantalla').value = '';
         }
+
         function calcular() {
             const expression = document.getElementById('pantalla').value;
             if (expression.includes('%')) {
-                // Si la expresión contiene '%', se calcula el porcentaje.
                 const base = expression.split('%')[0];
                 const porcentaje = expression.split('%')[1];
                 const porcentajeCalculado = eval(base) * (eval(porcentaje) / 100);
                 document.getElementById('pantalla').value = porcentajeCalculado;
             } else {
                 try {
-                    // Si no contiene '%', se realiza el cálculo normalmente.
                     const result = eval(expression);
                     document.getElementById('pantalla').value = result;
                 } catch (error) {
-                    document.getElementById('pantalla').value = 'Error';
+                    document.getElementById('pantalla').value = 'Syntax error';
                 }
             }
         }
-
     </script>
 </body>
 </html>
